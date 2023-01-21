@@ -4,11 +4,13 @@ export const useFetch = (options) => {
   const [data, setData] = useState(null);
 
   useEffect(() => {
-    console.log(options)
-    fetch(options.url)
-      .then((response) => response.json())
-      .then((json) => setData(json))
-    }, [])
+    if (options.url) {
+      console.log(options)
+      fetch(options.url)
+        .then((response) => response.json())
+        .then((json) => setData(json))
+    }
+  }, [])
 
 
   return {
