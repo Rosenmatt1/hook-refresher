@@ -4,8 +4,7 @@ import { useFetch } from "./useFetch"
 
 function App() {
   const [url, setUrl] = useState(null)
-  const myOptions = useMemo(()=> ({ url}, [url]))
-  const { data } = useFetch({myOptions})
+  const { data } = useFetch({url})
 
   console.log("App rendering")
 
