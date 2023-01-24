@@ -1,12 +1,13 @@
-import './App.css';
+
 import { useState, useMemo } from "react"
 import { useFetch } from "./useFetch"
+import './App.css';
 
 function App() {
   const [url, setUrl] = useState(null)
   const { data } = useFetch({url})
 
-  console.log("App rendering")
+  console.log("App", data)
 
   return (
     <div className="App">
