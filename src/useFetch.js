@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef, useLayoutEffect } from "react"
 
 export const useFetch = (options) => {
-  console.log("options", options)
+  // console.log("options", options)
   const [data, setData] = useState(null);
 
   let useCallbackRef = (callback) => {
@@ -15,7 +15,7 @@ export const useFetch = (options) => {
 
   // let savedOnSuccess = useCallbackRef(options.onSuccess)
   let savedOnSuccess = useRef(options.onSuccess)
-  console.log("savedOnSuccess", savedOnSuccess)
+  // console.log("savedOnSuccess", savedOnSuccess)
 
   useEffect(() => {
     if (options.url) {
