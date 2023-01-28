@@ -6,35 +6,28 @@ import './App.css';
 const useStopWatch = () => {
   const [count, setCount] = useState(0)
 
-  //   useEffect(() => {
-  //     const interval = setInterval(() => {
-  //       console.log(`count = ${count}`)
-  //       setCount((prev) => prev +1)
-  //       if (count >= 10)  return count
-
-  //     }, 1000)
-
-  //     return () => clearInterval(interval)
-  //   }, []) //useEffect would keep getting rerun if count was a dependency
-  //   return count
-  // }
-
   useEffect(() => {
-    if (count >= 10) {
-      return
-    }
-    else if (count < 10) {
-      setCount(count + 1)
-    }
+    const interval = setInterval(() => {
+      console.log(`count = ${count}`)
+      setCount((prev) => prev + 1)
+    }, 1000)
 
-    console.log(count)
-    // const interval = setInterval(() => {
-    //   console.log(`count = ${count}`)
-    //   // setCount((prev) => prev + 1)
-
-    // }, 1000)
-  }, [count])
+    return () => clearInterval(interval)
+  }, []) //useEffect would keep getting rerun if count was a dependency
   return count
+
+  //   (console.log("useEffect is run"))
+  //   if (count >= 10) {
+  //     return
+  //   }
+  //   else if (count < 10) {
+  //     setCount(count + 1)
+  //   }
+
+  //   console.log(count)
+  // }, [count])
+  // return count
+
 }
 
 
